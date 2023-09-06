@@ -126,3 +126,5 @@
 #     print("неверное значение")
 
 # Print("finish lesson")
+
+print("thanks for teaching")
