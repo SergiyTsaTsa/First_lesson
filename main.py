@@ -50,7 +50,7 @@
 
 # if 12 <= hours < 24:
 #     print("PM")
-# elif hours >= 0 and hours < 12:
+# elif hours >= 0 and hours < 12
 #     print("AM")
 # else:
 #     print("ncorrect hours!")
@@ -66,3 +66,4 @@
 #        print("Not ok")
 # else:
 #     print("Incorrect rating")
+
