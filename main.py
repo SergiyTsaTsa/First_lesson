@@ -124,3 +124,5 @@
 #     print(n1*1.0936)
 # else:
 #     print("неверное значение")
+
+# Print("finish lesson")
