@@ -234,3 +234,23 @@
 #
 # except Exception as e:
 #     print(f"Error: {e}")
+
+# Домашнє завдання №3.2. Користувач вводить два числа. Визначити, чи рівні ці числа, і, якщо
+# ні, вивести їх на екран у порядку зростання
+
+# try:
+#     while True:
+#         user_number1 = int(input("Enter first number: "))
+#         user_number2 = int(input("Enter second number: "))
+#
+#         if user_number1 == user_number2:
+#             print("Enter two different numbers:")
+#         elif user_number1 < user_number2:
+#             print(user_number1, user_number2)
+#             break
+#         elif user_number1 > user_number2:
+#             print(user_number2, user_number1)
+#             break
+#
+# except Exception as error:
+#     print(f"Exception occurred: {error}")
