@@ -254,3 +254,28 @@
 #
 # except Exception as error:
 #     print(f"Exception occurred: {error}")
+
+# Домашнє завдання №3.3. Користувач вводить два числа та матем дію: + - * або /
+# Залежно від введеної матем дії вивести результат
+
+# try:
+#
+#     user_number1 = int(input("Enter first number: "))
+#     user_number2 = int(input("Enter second number: "))
+#     user_math_action = int(input("Enter the number of the desired mathematical action 1. +, 2. -, 3. *, 4. /: "))
+#
+#     match user_math_action:
+#         case 1:
+#             print(user_number1 + user_number2)
+#         case 2:
+#             print(user_number1 - user_number2)
+#         case 3:
+#             print(user_number1 * user_number2)
+#         case 4:
+#             print(user_number1 / user_number2)
+#         case _:
+#             print("Incorrect number: ")
+# except ZeroDivisionError as error:
+#     print(f"ZeroDivisionError occurred: {error}")
+# except Exception as error:
+#     print(f"Exception occurred: {error}")
