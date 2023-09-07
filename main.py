@@ -1,130 +1,236 @@
+# Обробка винятків
 
-# number1 = int(input("введите цифру 1: "))
-# numder2 = int(input("введите цифру 2: "))
-# number3 = int(input("введите цифру 3: "))
-#
-# print(number1 + numder2 + number3)
-# print(number1 * numder2 * number3)
-#
-# side1 = int(input("введите длину диагонали 1: "))
-# side2 = int(input("введите длину диагонали 2: "))
-#
-# print(int((side1*side2)/2))
-#
-# number = int(input("введите четырехзначное число: "))
-# n1 = number // 1000
-# n2 = number // 100 % 10
-# n3 = number // 10 % 10
-# n4 = number % 10
-# print(n1 * n2 * n3 * n4)
-
-###################
-# умови
 # v1
-# n1 = 10 + 20 * 2  # оператор привласнення, отрабатывает последним
-# n2 = 20
+# n1, n2 = 10, 0  # множинне привласнення
+# print(n1 / n2)
+
+# num = float(input("Enter the number: "))
+# print(num)
+# print(int(num))
+
 # v2
-# n1, n2 = 10, 20 + 10  # множинне привласнення
-# print(n1 > n2)
-# print(n1 >= n2)
-# print(n1 < n2)
-# print(n1 <= n2)
-# print(n1 == n2)  # поверне True якщо обидва операнди рівні (однакові)
-# print(n1 != n2)  # поверне True якщо обидва операнди різні
+# try:
+#     num1 = int(input("Enter first number: "))
+#     num2 = int(input("Enter second number: "))
 #
-# print(1 == 1 and 3 == 3)  # поверне True якщо обидва операнди рівні True, інакше False
-# print(1 == 1 or 2 == 3)  # поверне True якщо хоча б один операнд дорівнює True, інакше False
+#     result = num1 / num2
 #
-# is_valid = False
-# print(is_valid)
-# print(not is_valid)  # not -> інверсія, якщо значення False стане True, і навпаки
+#     print(f"Result: {result}")
+# except ZeroDivisionError as error:
+#     print(f"ZeroDivisionError occurred: {error}")
+# except ValueError as error:
+#     print("Enter only integer numbers please!")
+#     print(f"ValueError: {error}")
+# except Exception as error:  # Exception -> базовий тип виключення пишемо останнім з except
+#     print(f"Exception occurred: {error}")
+# finally:  # Відпрацьовує завжди. Писати по потребі
+#     print("End of calculation")
+#
+# print("some text")
 
-# print("hello" in "hello world")
-# hours = int(input("enter hours: "))
+# У Python є такі базові типи винятків:
+#
+# BaseException: базовий тип для всіх вбудованих винятків
+#
+# Exception: базовий тип, який зазвичай застосовується для створення своїх типів винятків
+#
+# ArithmeticError: базовий тип для винятків, пов'язаних з арифметичними операціями
+# (OverflowError, ZeroDivisionError, FloatingPointError).
+#
+# BufferError: Виняток, який виникає при неможливості виконати операцію з буфером
+#
+# LookupError: базовий тип для винятків, які виникають під час звернення до колекцій
+# за некоректним ключем або індексом (наприклад, IndexError, KeyError)
+
+# https://docs.python.org/3/library/exceptions.html
+
+# IndexError: виняток виникає, якщо індекс при зверненні до елемента колекції знаходиться поза допустимим діапазоном
+#
+# KeyError: виникає, якщо у словнику немає ключа, за яким відбувається звернення до елемента словника.
+#
+# OverflowError: виникає, якщо результат арифметичної операції не може бути представлений поточним
+# Чисельним типом (зазвичай типом float).
+#
+# RecursionError: виникає, якщо перевищено допустиму глибину рекурсії.
+#
+# TypeError: якщо операція або функція застосовується до значення неприпустимого типу.
+#
+# ValueError: виникає, якщо операція або функція одержують об'єкт коректного типу з некоректним значенням.
+#
+# ZeroDivisionError: виникає при розподілі на нуль.
+#
+# NotImplementedError: тип виключення для вказівки, що якісь методи класу не реалізовані
+#
+# ModuleNotFoundError: виникає при неможливості знайти модуль при його імпорті директивою import
+#
+# OSError: тип винятків, які генеруються при виникненні помилок системи (наприклад, неможливо знайти файл,
+# пам'ять диска заповнена і т.д.)
+
+###
+# try:
+#     name = input("Enter you name: ")
+#
+#     if 1 < len(name) <= 20:
+#         print(f"Hello, {name}")
+#     else:
+#         raise Exception("Please enter a valid name!")  # raise -> згенерувати виняток (кинути виняток)
+# except Exception as e:
+#     print(f"Error: {e}")
+
+#####
+#
+# try:
+#     print("1. Start game\n2. Settings\n3. Saved games\n4. Exit")
+#     user_select = int(input("Enter menu number: "))
+#
+#     # v1
+#     if user_select == 1:
+#         print("Game started")
+#     elif user_select == 2:
+#         print("Settings opened")
+#     elif user_select == 3:
+#         print("Saved games opened")
+#     elif user_select == 4:
+#         print("Exit...")
+#     else:
+#         print("Incorrect menu item!")
+#
+#     # v2
+#     match user_select:
+#         case 1:
+#             print("Game started")
+#         case 2:
+#             print("Settings opened")
+#         case 3:
+#             print("Saved games opened")
+#         case 4:
+#             print("Exit...")
+#         case _:
+#             print("Incorrect menu item!")
+#
+# except Exception as e:
+#     print(f"Error: {e}")
+
+#############
+###
+# Цикли
+# - while
+# - for
 
 # v1
-# if hours >= 12:
-#     print("PM")
-# else:
-#     print("AM")
-
-# if 12 <= hours < 24:
-#     print("PM")
-# elif hours >= 0 and hours < 12
-#     print("AM")
-# else:
-#     print("ncorrect hours!")
+# i = 0
 #
-# print("Hello world")
-
-# film_rating = int(input("Enter film rating: "))
+# while i < 10:
+#     print(i, end=" ")
+#     i += 1  # i = i + 1
 #
-# if 0 < film_rating <= 5:
-#     if film_rating == 4 or film_rating == 5:
-#         print("OK")
-#     else:
-#        print("Not ok")
-# else:
-#     print("Incorrect rating")
-
-# Користувач вводить три цифри з клавіатури. Залежно від вибору користувача програма виводить на екран максимум із трьох,
-# мінімум із трьох або середньоарифметичне трьох чисел.
-
-# n1 = int(input("Введите первое число: "))
-# n2 = int(input("Введите второе число: "))
-# n3 = int(input("Введите третье число: "))
-# n4 = int(input("Введите желаемое значение - минимальное(1), максимальное(2), среднеарифметическое(3): "))
 #
-# if n4 == 1:
-#     if n1 < n2 <= n3:
-#         print(n1)
-#     elif n1 == n2 < n3:
-#         print(n1, n2)
-#     elif n2 < n3 <= n1:
-#         print(n2)
-#     elif n3 == n2 < n1:
-#         print(n2, n3)
-#     elif n3 < n2 <= n1:
-#         print(n3)
-#     elif n1 == n3 <= n2:
-#         print(n1, n3)
-#     else:
-#         print("все числа равны")
-# if n4 == 2:
-#     if n1 > n2 >= n3:
-#         print(n1)
-#     elif n1 == n2 > n3:
-#         print(n1, n2)
-#     elif n2 > n3 >= n1:
-#         print(n2)
-#     elif n2 == n3 > n1:
-#         print(n2, n3)
-#     elif n3 > n2 >= n1:
-#         print(n3)
-#     elif n1 == n3 > n2:
-#         print(n1, n3)
-#     else:
-#         print("все числа равны")
-# if n4 == 3:
-#     print((n1 + n2 + n3)/3)
-
-# . Користувач вводить з клавіатури кількість метрів. Залежно від вибору користувача програма переводить метри милі,
-# дюйми або ярди.
-
-# n1 = int(input("Введите количество метров: "))
-# n2 = int(input("Выберите единицу измерения - метры(1), мили(2), дюймы(3), ярды(4): "))
+# print("test")
 #
-# if n2 == 1:
-#     print(n1)
-# elif n2 == 2:
-#     print(n1*0.00062137)
-# elif n2 == 3:
-#     print(n1*39.370)
-# elif n2 == 4:
-#     print(n1*1.0936)
-# else:
-#     print("неверное значение")
+# v2
+# i = 12
+#
+# while True:
+#     print(i)
+#     i += 2
 
-# Print("finish lesson")
+# v3
+# i = 0
+#
+# while True:
+#     if i == 5:
+#         print("continue...")
+#         i += 1
+#         continue  # пропустить подальші дії циклу, але цикл не зупиниться
+#
+#     if i >= 10:
+#         print("break...")
+#         break  # цикл зупиниться (повне завершення циклу)
+#
+#     print(i)
+#     i += 1
+#
+# print("After while")
 
-print("thanks for teaching")
+#####################
+###
+# Користувач вводить з клавіатури числа
+# якщо користувач ввів 0 -> припинити введення чисел
+# в кінці вивести середню арифметичну числову послідовність
+
+# sum_numbers = 0
+# numbers_count = 0
+#
+# while True:
+#     user_number = int(input("Enter number: "))
+#
+#     if user_number == 0:
+#         print("end...")
+#         break
+#
+#     sum_numbers += user_number
+#     numbers_count += 1
+#
+# print(f"Sum: {sum_numbers}")
+# average = sum_numbers / numbers_count
+# print(f"Average: {average}")
+
+####
+# sum_num = 0
+# count = 0
+
+# try:
+#     while True:
+#         try:
+#             num = int(input("Enter number: "))
+#
+#             if num == 0 and count == 0:
+#                 print("Please enter a number")
+#                 continue
+#
+#             if num == 0:
+#                 print("end...")
+#                 break
+#
+#             sum_num += num
+#             count += 1
+#         except ValueError as e:
+#             print("Enter numbers only")
+#
+#     average = sum_num / count
+#     print(f"sum num: {sum_num}")
+#     print(f"count: {count}")
+#     print(f"average: {average}")
+#
+# except Exception as e:
+#     print
+
+########################
+
+# Домашнє завдання №3. 1. Користувач вводить із клавіатури номер дня тижня (1-7). Необхідно
+# вивести на екран назви дня тижня. Наприклад, якщо 1, на екрані напис понеділок, 2 — вівторок...
+
+# try:
+#     print("1. Понедельник 2. Вторник 3. Среда 4. Четверг 5. Пятница 6. Суббота 7. Воскресенье ")
+#     user_select = int(input("Пожалуйста, введите номер дня недели: "))
+#
+#     match user_select:
+#         case 1:
+#             print("Понедельник")
+#         case 2:
+#             print("Вторник")
+#         case 3:
+#             print("Среда")
+#         case 4:
+#             print("Четверг")
+#         case 5:
+#             print("Пятница")
+#         case 6:
+#             print("Суббота")
+#         case 7:
+#             print("Воскресенье")
+#         case _:
+#             print("Некорректный номер дня недели: ")
+#
+# except Exception as e:
+#     print(f"Error: {e}")
