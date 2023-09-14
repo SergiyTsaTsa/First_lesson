@@ -129,13 +129,13 @@
 # for i in range(NUMS_SIZE):
 #     numbers.append(random.randint(-10, 10))
 #
-# for number1, a in enumerate(numbers):
+# for number1, a in enumerate(numbers): # обращается одновременно к индексу и к значению єлемента коллекции, разобрался, так как был большой затык в вывполнении этого подзадания
 #     if a > 0:
 #         break
-# for number2, a in enumerate(reversed(numbers)):
+# for number2, a in enumerate(reversed(numbers)): # про reversed вы упоминали на занятии, при разборе домашки, поэтому пришлось разобраться)
 #     if a > 0:
 #         break
-# sum_numbers = sum(numbers[number1 + 1: -number2 - 1])
+# sum_numbers = sum(numbers[number1 + 1: -number2 - 1]) # такая конструкция вроде и не озвучивалась, но sum и отрицательный number2 получен путем множества проб и ошибок
 #
 # print(numbers)
 # print (sum_numbers)
